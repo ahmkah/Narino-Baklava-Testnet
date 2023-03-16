@@ -50,6 +50,11 @@ pip3 install naruno --no-cache
 ```
 narunocli --narunoimport /root/dosyaismi.zip
 ```
+> ## Cüzdan kontrol etme
+```
+narunocli --printwallet
+```
+
 ![image](https://user-images.githubusercontent.com/108215275/225013106-476299cd-8d5f-44d5-8dfb-ce7076b6fdbe.png)
 
 # ***Kurulum***
