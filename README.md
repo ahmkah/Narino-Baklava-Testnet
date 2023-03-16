@@ -58,6 +58,7 @@ narunocli --printwallet
 ![image](https://user-images.githubusercontent.com/108215275/225013106-476299cd-8d5f-44d5-8dfb-ce7076b6fdbe.png)
 
 # ***Kurulum***
+
 ```
 cd /root/Naruno
 
@@ -68,6 +69,9 @@ pip3 install naruno-api
 ![image](https://user-images.githubusercontent.com/108215275/225013950-37c161c7-6fe9-433f-9f49-711ee777f377.png)
 
 # ***Naruno API bağlanma***
+> ## Aşağıdaki komuttan sonra 1 kez Enter'a basıp devam edin arka planda çalışmaya devam edecektir.
+> ## Eğer daha önce Naruno Baklava Testnet kurduysanız ve güncelleme yapmak istiyorsanız zaten narinoapi arkada çalışmaktadır. Bu nedenle çıktılarda Error görebilirsiniz bu çok önemli değil devam edebilirsiniz.
+> ## Eğer ben bu şekilde yapmak istemiyorum diyorsanız HTOP açıp Search (F3) ile narino olarak aratın ve ilgili api dosyasını bulup KILL (F9) edin onaylayın, ardından Çıkış (F10) yapın. Aşağıdaki komudu çalıştırın.
 ```
 narunoapi &
 ```
