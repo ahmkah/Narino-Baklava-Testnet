@@ -128,9 +128,14 @@ integration.send("Your_Action_Name", "Your_Data", "Recipient_Address")
 ```
 chmod +x send.py
 ```
-> İşlem göndermeden önce cüzdanı değiştirin
+> İşlem göndermeden önce cüzdanı değiştirin. Dikkat edeceğiniz konu hangi wallet adresi mail attığınız o ilgili cüzdanı seçmeniz gerekli
+> öncelikle aşağıdaki komutla tüm cüzdanları sıralayın
 ```
-narunocli -w 1
+narunocli --printwallet
+```
+> Ardından aşağıdaki komutla Naruno cüzdanı ilettiğiniz adresin başında yer alan 0 1 2 numarayı aşağıdaki komutta <Cüzdan Adresi Başındaki Rakam> değiştirerek yazın
+```
+narunocli -w <Cüzdan Adresi Başındaki Rakam>
 ```
 ![image](https://user-images.githubusercontent.com/108215275/225107970-ce451414-6e91-4bd5-8bd8-b8c0819346ac.png)
 
