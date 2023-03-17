@@ -61,8 +61,8 @@ pip3 install naruno-api --upgrade
 
 # ***Naruno API bağlanma***
 > ## Aşağıdaki komuttan sonra 1 kez Enter'a basıp devam edin arka planda çalışmaya devam edecektir.
-> ## Eğer daha önce Naruno Baklava Testnet kurduysanız ve güncelleme yapmak istiyorsanız zaten narinoapi arkada çalışmaktadır. Bu nedenle çıktılarda Error görebilirsiniz bu çok önemli değil devam edebilirsiniz. Alacağınız hata "OSError: [Errno 98] Address already in use" Enter yapın devam edin.
-> ## Eğer ben bu şekilde yapmak istemiyorum diyorsanız HTOP açıp Search (F3) ile narino olarak aratın ve ilgili api dosyasını bulup KILL (F9) edin onaylayın, ardından Çıkış (F10) yapın. Aşağıdaki komudu çalıştırın.
+> ## Eğer daha önce Naruno Baklava Testnet kurduysanız ve güncelleme yapmak istiyorsanız zaten narinoapi arkada çalışmaktadır. Bu nedenle çıktılarda Error görebilirsiniz bu çok önemli değil devam edebilirsiniz. Alacağınız hata `OSError: [Errno 98] Address already in use` Enter yapın devam edin.
+> ## Eğer ben bu şekilde yapmak istemiyorum diyorsanız `HTOP` açıp Search (F3) ile narino olarak aratın ve ilgili api dosyasını bulup KILL (F9) edin onaylayın, ardından Çıkış (F10) yapın. Aşağıdaki komudu çalıştırın.
 ```
 narunoapi &
 ```
@@ -99,7 +99,7 @@ nano send.py
  
 > `Your_App_Name` yerine sizin oluşturacağınız uygulama adı örn:whatshapp
 >
-> Burada önemli olan birbirinize ileteceğiniz mesajları görebilmeniz için aynı APP adını kullanmanız gerekli. Örneğin My_APP adını verdiyseniz uygulamanıza karşı taraf bu mesajı görebilmesi için onunda My_APP olarak ayarları yapması gerekli. Whatsapptan yazdığınız mesajı yanlız karşı taraftaki Whatsapptan görebildiği gibi bir durum bu. Bu kısım önemli!!!
+> Burada önemli olan birbirinize ileteceğiniz mesajları görebilmeniz için aynı APP adını kullanmanız gerekli. Örneğin `My_APP` adını verdiyseniz uygulamanıza karşı taraf bu mesajı görebilmesi için onunda `My_APP` olarak ayarları yapması gerekli. Whatsapptan yazdığınız mesajı yanlız karşı taraftaki Whatsapptan görebildiği gibi bir durum bu. Bu kısım önemli!!!
 >
 > `Your_Wallet_Password` yerine sizin cüzdan oluştururken kullandığınız şifreyi yazın
 >
@@ -153,11 +153,11 @@ nano get.py
 
 > `Your_App_Name` yerine sizin oluşturacağınız uygulama adı örn:whatshapp
 >
-> Burada önemli olan birbirinize ileteceğiniz mesajları görebilmeniz için aynı APP adını kullanmanız gerekli. Örneğin My_APP adını verdiyseniz uygulamanıza karşı taraf bu mesajı görebilmesi için onunda My_APP olarak ayarları yapması gerekli. Whatsapptan yazdığınız mesajı yanlız karşı taraftaki Whatsapptan görebildiği gibi bir durum bu. Bu kısım önemli!!!
+> Burada önemli olan birbirinize ileteceğiniz mesajları görebilmeniz için aynı APP adını kullanmanız gerekli. Örneğin `My_APP` adını verdiyseniz uygulamanıza karşı taraf bu mesajı görebilmesi için onunda `My_APP` olarak ayarları yapması gerekli. Whatsapptan yazdığınız mesajı yanlız karşı taraftaki Whatsapptan görebildiği gibi bir durum bu. Bu kısım önemli!!!
 >
 > `Your_Wallet_Password` yerine sizin cüzdan oluştururken kullandığınız şifreyi yazın
 
-> integration.disable_cache() komudu başına # işsreti koyarsanız disable etmiş olursunuz bu durumda sadece yeni gelen mesajları görürsünüz. Mevcut durumda tüm posta kutunuzu görüyorsunuz.
+> `integration.disable_cache()` komudu başına `#` işsreti koyarsanız disable etmiş olursunuz bu durumda sadece yeni gelen mesajları görürsünüz. Mevcut durumda tüm posta kutunuzu görüyorsunuz.
 > Bu işlemleri yaptıktan sonra CTRL ve X ardından y ve Enter tuşuna basıp kaydedin.
 
 
@@ -184,7 +184,7 @@ python3 get.py
 ```
 
 
-> # ***YARDIMCI KOMUTLAR***
+> # YARDIMCI KOMUTLAR
 
 > ## ***Cüzdanı import etme***
 
@@ -199,7 +199,7 @@ narunocli --printwallet
 
 ![image](https://user-images.githubusercontent.com/108215275/225013106-476299cd-8d5f-44d5-8dfb-ce7076b6fdbe.png)
 
-# Normalde Naruno testnet içinde debug özelliği kapalı olarak geliyor. Eğer get.py çalıştırdığınızda debug çıktıları görüyorsanız kapamanızda fayda olacaktır.
+# Normalde Naruno testnet içinde `debug` özelliği kapalı olarak geliyor. Eğer `get.py` çalıştırdığınızda debug çıktıları görüyorsanız kapamanızda fayda olacaktır.
 > Aşağıdaki komudu girebilirsiniz
 ```
 narunocli --debugmodeoff
