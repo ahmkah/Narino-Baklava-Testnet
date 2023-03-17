@@ -22,12 +22,12 @@ http://test_net.1.naruno.org:8000/balance/get/?address=CüzdanAdresi
 ```
 # ***İlk olarak önceki kurulumu yeni versiyona güncelliyoruz***
 > # ***ÖNEMLİ***
-> ### ***Narunoyu Güncellemeden önce cüzdanı yedekleyip güncelledikten sonra tekrar import etmek gerekiyor***
+> ### ***Narunoyu Güncellemeden önce cüzdanı yedekleyip güncelledikten sonra tekrar import etmek gerektiği durumda yedek almakta fayda var***
 > ### Bu adımda hata yapmayın
 
 
 
-> ## ***Önce yedekleme (cüzdan oluşturduktan sonra yaptıysanız tekrar yapmanıza gerek yok)***
+> ## ***Önce yedekleme ***
 ```
 cd Naruno
 narunocli --narunoexport
@@ -39,23 +39,11 @@ narunocli --narunoexport
 > ##  ***Güncelleme***
 ```
 cd /root
-pip3 uninstall Naruno -y
-pip3 install naruno --no-cache
+pip3 install naruno --upgrade
 ```
 ![image](https://user-images.githubusercontent.com/108215275/225120173-6c0fefc3-5ecd-4c4c-8986-27b4d288cc5b.png)
 
-> ## ***Cüzdanı import etme***
 
-> ### ***Bilgisayarınıza indirdiğiniz .zip dosyasını sunucuda `/root` klasörü altına yükleyin Ardından aşağıdaki komutta `dosyaismi.zip` yazan yeri değiştirerek import işlemini tamamlayın***
-```
-narunocli --narunoimport /root/dosyaismi.zip
-```
-> ## Cüzdan kontrol etme
-```
-narunocli --printwallet
-```
-
-![image](https://user-images.githubusercontent.com/108215275/225013106-476299cd-8d5f-44d5-8dfb-ce7076b6fdbe.png)
 
 # ***Kurulum***
 
@@ -64,7 +52,8 @@ cd /root/Naruno
 
 narunocli --baklavaon
 
-pip3 install naruno-api
+pip3 install naruno-api --upgrade
+
 ```
 ![image](https://user-images.githubusercontent.com/108215275/225013950-37c161c7-6fe9-433f-9f49-711ee777f377.png)
 
@@ -86,12 +75,15 @@ narunocli --getbalance
 ```
 ![image](https://user-images.githubusercontent.com/108215275/225121211-5d364256-210d-4970-bdfd-75591974c409.png)
 
-
-
-
-# Sıradaki adım Naruno üzerinde bir app oluşturmak
+# Sıradaki adım Web3_App Naruno üzerinde mevcut app yüklemek
 > Buradaki örnekte mesaj gönderebileceğimiz bir app yapıyoruz.
- 
+```
+pip3 install naruno-remote-app --upgrade
+
+```
+
+# Naruno üzerinde bir app oluşturmak
+> Aşağıdaki komudu girmeniz yeterli
 > Önce root dizinine inin
 ```
 cd /root
@@ -104,6 +96,8 @@ nano send.py
 > Aşağıdaki komutları send.py içine kopyalayın.. Ve " " içindekileri aşağıdaki notlar gibi düzenleyin
  
 > `Your_App_Name` yerine sizin oluşturacağınız uygulama adı örn:whatshapp
+>
+> Burada önemli olan birbirinize ileteceğiniz mesajları görebilmeniz için aynı APP adını kullanmanız gerekli. Örneğin My_APP adını verdiyseniz uygulamanıza karşı taraf bu mesajı görebilmesi için onunda My_APP olarak ayarları yapması gerekli. Whatsapptan yazdığınız mesajı yanlız karşı taraftaki Whatsapptan görebildiği gibi bir durum bu. Bu kısım önemli!!!
 >
 > `Your_Wallet_Password` yerine sizin cüzdan oluştururken kullandığınız şifreyi yazın
 >
@@ -119,8 +113,8 @@ from naruno.apps.remote_app import Integration
 
 integration = Integration("Your_App_Name", password="Your_Wallet_Password", host="localhost")
 
-from naruno.lib.settings_system import baklava_settings
-baklava_settings(True)
+#from naruno.lib.settings_system import baklava_settings //" Bu komudu disable ettim gerek kalmadı"
+#baklava_settings(True) //" Bu komudu disable ettim gerek kalmadı"
 
 integration.send("Your_Action_Name", "Your_Data", "Recipient_Address")
 ```
@@ -157,8 +151,11 @@ nano get.py
 
 > `Your_App_Name` yerine sizin oluşturacağınız uygulama adı örn:whatshapp
 >
+> Burada önemli olan birbirinize ileteceğiniz mesajları görebilmeniz için aynı APP adını kullanmanız gerekli. Örneğin My_APP adını verdiyseniz uygulamanıza karşı taraf bu mesajı görebilmesi için onunda My_APP olarak ayarları yapması gerekli. Whatsapptan yazdığınız mesajı yanlız karşı taraftaki Whatsapptan görebildiği gibi bir durum bu. Bu kısım önemli!!!
+>
 > `Your_Wallet_Password` yerine sizin cüzdan oluştururken kullandığınız şifreyi yazın
 
+> integration.disable_cache() komudu başına # işsreti koyarsanız disable etmiş olursunuz bu durumda sadece yeni gelen mesajları görürsünüz. Mevcut durumda tüm posta kutunuzu görüyorsunuz.
 > Bu işlemleri yaptıktan sonra CTRL ve X ardından y ve Enter tuşuna basıp kaydedin.
 
 
@@ -168,8 +165,8 @@ from naruno.apps.remote_app import Integration
 integration = Integration("Your_App_Name", password="Your_Wallet_Password", host="localhost")
 integration.disable_cache()
 
-from naruno.lib.settings_system import baklava_settings
-baklava_settings(True)
+#from naruno.lib.settings_system import baklava_settings //" Bu komudu disable ettim gerek kalmadı"
+#baklava_settings(True) //" Bu komudu disable ettim gerek kalmadı"
 
 print(integration.get())
 
@@ -182,6 +179,29 @@ chmod +x get.py
 > Çalıştırın
 ```
 python3 get.py
+```
+
+
+> # ***YARDIMCI KOMUTLAR***
+
+> ## ***Cüzdanı import etme***
+
+> ### ***Bilgisayarınıza indirdiğiniz .zip dosyasını sunucuda `/root` klasörü altına yükleyin Ardından aşağıdaki komutta `dosyaismi.zip` yazan yeri değiştirerek import işlemini tamamlayın***
+```
+narunocli --narunoimport /root/dosyaismi.zip
+```
+> ## Cüzdan kontrol etme
+```
+narunocli --printwallet
+```
+
+![image](https://user-images.githubusercontent.com/108215275/225013106-476299cd-8d5f-44d5-8dfb-ce7076b6fdbe.png)
+
+# Normalde Naruno testnet içinde debug özelliği kapalı olarak geliyor. Eğer get.py çalıştırdığınızda debug çıktıları görüyorsanız kapamanızda fayda olacaktır.
+> Aşağıdaki komudu girebilirsiniz
+```
+narunocli --debugmodeoff
+
 ```
 
 > ### ***Arkadaşlar yapılacak işlemler şu an için bu kadar, gelişmeler için Naruno hesaplarını takip etmeyi unutmayın***
