@@ -35,10 +35,10 @@ narunocli --narunoexport
 ![image](https://user-images.githubusercontent.com/108215275/225010543-43bc6d17-ad68-4f7d-b0bd-6c4f062f4917.png)
 
 >  ### ***Ardından sunucuda `/usr/local/lib/python3.8/dist-packages/naruno/backups/` altındaki .zip dosyasını bilgisayarınıza indirin***
->  ### *** Eğer güncelleme sırasında bir hata alıyorsanız ve cüzdan bilgilerinizi, işlemlerinizi kurtarmak için bu yedeği alıyoruz. Eğer bir hata ile karşılaşırsanız nasıl cüzdanınızı kurtaracağınızı sayfa altında bulabilirsiniz***
+>  ###  Eğer güncelleme sırasında bir hata alıyorsanız ve cüzdan bilgilerinizi, işlemlerinizi kurtarmak için bu yedeği alıyoruz. Eğer bir hata ile karşılaşırsanız nasıl cüzdanınızı kurtaracağınızı sayfa altında bulabilirsiniz
 
-> ##  ***Güncelleme***
-> >  ### *** Güncelleme sırasında bir hata alırsanız discord kanalda ekran görüntüsü ile mesaj iletin***
+> # ***Güncelleme***
+> >  ### Güncelleme sırasında bir hata alırsanız discord kanalda ekran görüntüsü ile mesaj iletin
 ```
 cd /root
 pip3 install naruno --upgrade
