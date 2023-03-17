@@ -78,7 +78,7 @@ narunocli --getbalance
 ![image](https://user-images.githubusercontent.com/108215275/225121211-5d364256-210d-4970-bdfd-75591974c409.png)
 
 # Sıradaki adım Web3_App Naruno üzerinde mevcut app yüklemek
-> Buradaki örnekte mesaj gönderebileceğimiz bir app yapıyoruz.
+> Şimdilik sadece indirip kuruyoruz kısa süre sonra bu app ile işlemler yapacağız.
 ```
 pip3 install naruno-remote-app --upgrade
 
